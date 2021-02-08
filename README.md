@@ -17,3 +17,6 @@ creare un file chiamato settings.json con
     "password":""
 }
 ```
+
+>**NOTE**:bisogna fare diventare questa repo una subrepo di una script repo
+
