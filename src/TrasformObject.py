@@ -6,13 +6,14 @@ class TrasformObject:
         self.today=dt.datetime.now().date()
         self.compiti=compiti
 
+
     def dataMassima(self):
         for obj in self.compiti:
             datCompiti=dt.date.fromisoformat(obj["datCompiti"])
             datGiorno=dt.date.fromisoformat(obj["datGiorno"])
             if(datCompiti<datGiorno):
-                obj["datCompiti"]=datGiorno.isoformat()
-                obj["datGiorno"]=datCompiti.isoformat()
+                obj["datCompiti"]=dt.datetime.strptime(datGiorno, "%Y-%m-%d").date()
+                obj["datGiorno"]=dt.datetime.strptime(datCompiti, "%Y-%m-%d").date()
     
     def ordina(self):
         self.compiti.sort(
